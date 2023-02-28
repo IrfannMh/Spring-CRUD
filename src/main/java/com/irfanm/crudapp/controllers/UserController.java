@@ -26,4 +26,16 @@ public class UserController {
         userService.createUser(user);
         return "data berhasil ditambahkan";
     }
+
+    @PutMapping("/{id}")
+    public String updateUser(@RequestBody User user, @PathVariable String id){
+        userService.updateUser(user, id);
+        return "data berhasil diubah";
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteUser(@PathVariable String id){
+        userService.deleteUser(id);
+        return "data berhasil dihapus";
+    }
 }
